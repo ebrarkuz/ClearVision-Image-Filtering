@@ -1,6 +1,6 @@
 # ClearVision: An Advanced C++ Image Processing System
 
-**ClearVision** is a simple C++ app for working with images. It helps you make images look better, hide secret messages inside them, and more. It was made for a class project at Hacettepe University.
+**ClearVision** is a simple C++ app for working with images. It helps you make images look better, hide secret messages inside them, and more. It was made for a class project for the BBM203 Software Laboratory 1 class at Hacettepe University.
 
 ---
 ### What It Can Do
@@ -28,8 +28,9 @@ g++ -g -std=c++11 -o clearvision main.cpp SecretImage.cpp GrayscaleImage.cpp Fil
 ```                        
 Or, you can use the Makefile if you have one:
 
-make
+
 Run the Program
+
 After you build it, you can run it from your terminal. Here are some examples:
 
 To make an image smoother:
