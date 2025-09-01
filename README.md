@@ -1,75 +1,62 @@
 # ClearVision: An Advanced C++ Image Processing System
 
-**ClearVision** is a robust image processing application built in C++11, designed to handle critical tasks ranging from **image enhancement to secure data handling**. Developed as a project for the BBM203 Software Practicum I course, this system provides a suite of tools for noise reduction, image manipulation, and steganography.
+**ClearVision** is a simple C++ app for working with images. It helps you make images look better, hide secret messages inside them, and more. It was made for a class project at Hacettepe University.
 
 ---
-### Core Capabilities
+### What It Can Do
 
-* **Image Filtering:**
-    * **Noise Reduction:** Implementations of **Mean** and **Gaussian** filters effectively smooth out imperfections and noise.
-    * **Image Sharpening:** The **Unsharp Mask** filter helps in enhancing edge details and improving overall clarity.
-* **Image Manipulation & Analysis:**
-    * Perform essential operations like **addition, subtraction, and comparison** on grayscale images. These functionalities are built using C++ operator overloading for a more intuitive syntax.
-* **Secure Data Handling (Steganography):**
-    * **Message Embedding:** Hide text messages within an image's pixel data by modifying its **Least Significant Bits (LSB)**, providing a secure method for secret communication.
-    * **Message Extraction:** Reliably retrieve hidden messages from images that have been processed with the steganography module.
-
----
-### Technology Stack
-
-The project leverages key C++11 features to deliver its functionality:
-
-* **Dynamic Memory Management:** Images are stored and manipulated efficiently in memory using dynamic allocation.
-* **Arrays and Matrices:** All image processing operations are performed on pixel data stored in a matrix format.
-* **External Libraries:** The `stb_image.h` and `stb_image_write.h` single-header libraries are used for seamless image file I/O (loading and saving PNG/JPG files).
+* **Make Images Clearer:**
+    * It can use a **Mean Filter** to make images smoother and get rid of noise.
+    * It can also use a **Gaussian Filter** to do a better job of smoothing.
+    * It has an **Unsharp Mask** filter to make edges sharper and clearer.
+* **Hide Secret Messages:**
+    * You can put a secret message inside an image. This is called steganography.
+    * You can also get the hidden message back out of the image.
+* **Other Tools:**
+    * It can add or subtract images.
+    * You can check if two images are exactly the same.
 
 ---
-### Building and Running the Application
+### How to Use It
 
-To get the project up and running, follow these simple steps.
+#### **Build the Program**
 
-#### **Building from Source**
-
-You can compile the source files directly using `g++`:
+First, you need to turn the code into a program. Use this command:
 
 ```bash
 g++ -g -std=c++11 -o clearvision main.cpp SecretImage.cpp GrayscaleImage.cpp Filter.cpp Crypto.cpp
-Alternatively, you can use the provided build scripts:
+Or, you can use the Makefile if you have one:
 
 Bash
 
-# To build with the Makefile
 make
+Run the Program
+After you build it, you can run it from your terminal. Here are some examples:
 
-# To build with CMake
-mkdir clearvision_build
-cmake -S . -B clearvision_build/
-make -C clearvision_build/
-Using ClearVision
-After compiling, you can execute the program from the command line with various arguments to perform different tasks.
-
-Apply a Mean Filter:
+To make an image smoother:
 
 Bash
 
-./clearvision mean input_image.png 3
-Apply an Unsharp Mask Filter:
+./clearvision mean photo.png 3
+To make an image sharper:
 
 Bash
 
-./clearvision unsharp input.png 5 1.5
-Embed a Secret Message:
+./clearvision unsharp image.png 5 1.5
+To hide a message:
 
 Bash
 
-./clearvision enc secret_image.png "This is a confidential message."
-Extract a Hidden Message:
+./clearvision enc secret_photo.png "This is a secret note."
+To find a hidden message:
 
 Bash
 
-./clearvision dec secret_image.png 20
-Compare Two Images:
+./clearvision dec secret_photo.png 20
+To check if two photos are the same:
 
 Bash
+
+./clearvision equals picture1.png picture2.png
 
 ./clearvision equals image1.png image2.png
