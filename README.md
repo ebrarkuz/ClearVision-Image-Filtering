@@ -25,9 +25,8 @@ First, you need to turn the code into a program. Use this command:
 
 ```bash
 g++ -g -std=c++11 -o clearvision main.cpp SecretImage.cpp GrayscaleImage.cpp Filter.cpp Crypto.cpp
+```                        
 Or, you can use the Makefile if you have one:
-
-Bash
 
 make
 Run the Program
@@ -35,27 +34,35 @@ After you build it, you can run it from your terminal. Here are some examples:
 
 To make an image smoother:
 
-Bash
+```bash
 
 ./clearvision mean photo.png 3
-To make an image sharper:
 
-Bash
+```
+
+To make an image sharper:
+```bash
 
 ./clearvision unsharp image.png 5 1.5
-To hide a message:
 
-Bash
+```
+
+To hide a message:
+```bash
 
 ./clearvision enc secret_photo.png "This is a secret note."
+
+
+```
+
 To find a hidden message:
-
-Bash
-
+```bash
 ./clearvision dec secret_photo.png 20
-To check if two photos are the same:
 
-Bash
+```
+
+To check if two photos are the same:
+```bash
 
 ./clearvision equals picture1.png picture2.png
 
